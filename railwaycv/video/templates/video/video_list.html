@@ -1,0 +1,17 @@
+{% extends "video/base.html" %} 
+
+{% block header %}Видео{% endblock %}
+
+{% block content %}
+
+<ul>
+  {% for video in videos %}
+  <li>
+    {{ video.name }} - {{ video.upload_date|date }} | <a href="{% url 'play_video' video.id %}">Просмотреть</a>
+  </li>
+  {% empty %}
+  <li>Пока нет видео.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "video/base.html" %} 
+
+{% block header %}Видео{% endblock %}
+
+{% block content %}
+ 
+
+<h2>Оригинальное видео</h2>
+
+<video width="40%" height="auto" controls>
+  <source src="{{ video.video.url }}" type="video/mp4" />
+</video>
+
+<h2>Обработанное видео</h2>
+
+<video width="40%" height="auto" controls>
+  <source src="{{ video.detected_video.url }}" type="video/mp4" />
+</video>
+
+<div id="signal-indicator"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody id="record-table"></tbody>
+</table>
+
+{% endblock %}
